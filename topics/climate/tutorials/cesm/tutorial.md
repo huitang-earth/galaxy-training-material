@@ -137,7 +137,7 @@ create_newcase --help
 We can now create the case we will be running in this tutorial:
 
 ~~~
-create_newcase --case ../../../cesm_cases/F2000climo-f19_g17 --compset F2000climo --res f19_g17 --machine espresso --run-unsupported
+create_newcase --case cesm_cases/F2000climo-f19_g17 --compset F2000climo --res f19_g17 --machine espresso --run-unsupported
 ~~~
 
 *   **case**: specifies the name and location of the case being created. It creates a new case in `$HOME/cases` and its name is `F2000climo-f19_g17`
@@ -192,7 +192,7 @@ The list of available component set is given [here](http://www.cesm.ucar.edu/mod
 Now you should have a new directory in `$HOME/cases/F2000climo-f19_g17` corresponding to our new case.
 
 ~~~
-cd ../../../cesm_cases/F2000climo-f19_g17
+cd cesm_cases/F2000climo-f19_g17
 ~~~
 
 Check the content of the directory and browse the sub-directories:  
