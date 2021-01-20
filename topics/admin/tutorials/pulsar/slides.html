@@ -240,7 +240,19 @@ class: center, middle, inverse
 
 ---
 
+<img src="/training-material/assets/images/GTN.png" alt="Galaxy Training Network" style="height: 8em;"/>
+
 # Running Jobs on Remote Resources with Pulsar
+
+
+<div class="contributors-line">
+
+
+ <a href="/training-material/hall-of-fame/natefoo/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/natefoo" alt="Nate Coraor">Nate Coraor</a> <a href="/training-material/hall-of-fame/slugger70/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/slugger70" alt="Simon Gladman">Simon Gladman</a> <a href="/training-material/hall-of-fame/mvdbeek/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/mvdbeek" alt="Marius van den Beek">Marius van den Beek</a> <a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/hexylena" alt="Helena Rasche">Helena Rasche</a>
+
+
+</div>
+
 
 
 
@@ -285,6 +297,36 @@ slide to change on the other. Useful when presenting.
 
 ---
 
+
+
+
+
+
+### &lt;i class=&quot;far fa-question-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span class=&quot;visually-hidden&quot;&gt;question&lt;/span&gt; Questions
+
+
+- How does pulsar work?
+
+- How can I deploy it?
+
+
+---
+
+
+
+### &lt;i class=&quot;fas fa-bullseye&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span class=&quot;visually-hidden&quot;&gt;objectives&lt;/span&gt; Objectives
+
+
+- Have an understanding of what Pulsar is and how it works
+
+- Install and configure a Pulsar server on a remote linux machine
+
+- Be able to get Galaxy to send jobs to a remote Pulsar server
+
+
+---
+
+
 # What are heterogenous compute resources?
 
 Differences in:
@@ -328,7 +370,9 @@ Galaxy's remote job management system
 
 * Galaxy Pulsar job runner is Pulsar client
 
-* Transport is HTTP or AMQP, language is JSON
+* Communication is via HTTP or AMQP, language is JSON
+
+* File transport is dependent on communication method
 
 ---
 # Pulsar - Architecture
@@ -340,7 +384,7 @@ Galaxy's remote job management system
 
 Pulsar server listens over HTTP(S)
 
-Pulsar client initiates connections to server
+Pulsar client (Galaxy) initiates connections to Pulsar server
 
 Good for:
 - Environments where firewall, open ports are not concerns
@@ -415,6 +459,22 @@ Pulsar &quot;managers&quot; provide job running interfaces:
     * [https://github.com/galaxyproject/ansible-pulsar](https://github.com/galaxyproject/ansible-pulsar)
 
 
+
+
+---
+### &lt;i class=&quot;fas fa-key&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span class=&quot;visually-hidden&quot;&gt;keypoints&lt;/span&gt; Key points
+
+
+- Pulsar allows you to easily add geographically distributed compute resources into your Galaxy instance
+
+- It also works well in situations where the compute resources cannot share storage pools.
+
+
+
+
+
+
+
 ---
 
 ## Thank you!
@@ -425,7 +485,7 @@ This material is the result of a collaborative work. Thanks to the [Galaxy Train
 <div class="contributors-line">
 
 
-<a href="/training-material/hall-of-fame/natefoo/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/natefoo" alt="Nate Coraor">Nate Coraor</a>, <a href="/training-material/hall-of-fame/slugger70/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/slugger70" alt="Simon Gladman">Simon Gladman</a>, <a href="/training-material/hall-of-fame/mvdbeek/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/mvdbeek" alt="Marius van den Beek">Marius van den Beek</a>, <a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/hexylena" alt="Helena Rasche">Helena Rasche</a>
+ <a href="/training-material/hall-of-fame/natefoo/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/natefoo" alt="Nate Coraor">Nate Coraor</a> <a href="/training-material/hall-of-fame/slugger70/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/slugger70" alt="Simon Gladman">Simon Gladman</a> <a href="/training-material/hall-of-fame/mvdbeek/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/mvdbeek" alt="Marius van den Beek">Marius van den Beek</a> <a href="/training-material/hall-of-fame/hexylena/" class="contributor-badge"><img src="https://avatars.githubusercontent.com/hexylena" alt="Helena Rasche">Helena Rasche</a>
 
 
 </div>
@@ -437,8 +497,6 @@ This material is the result of a collaborative work. Thanks to the [Galaxy Train
 
 This material is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 
-
-.footnote[Found a typo? Something is wrong in this tutorial? <br/>Edit it on [GitHub](https://github.com/galaxyproject/training-material/tree/master/topics/admin/tutorials/pulsar/slides.html)]
 
     </textarea>
 	<script src="/training-material/assets/js/remark-latest.min.js" type="text/javascript"></script>
