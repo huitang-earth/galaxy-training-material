@@ -43,8 +43,8 @@ contributors:
 {:.no_toc}
 
 
-The practical aims at familiarizing you with running site-level CLM-FATES in Galaxy and analyzing the model results.
-It will also teach you on how to create Galaxy workflow for your site-level CLM-FATES simulations to make your research fully reproducible.
+The practical aims at familiarizing you with running CLM-FATES in Galaxy and analyzing the model results.
+It will also teach you on how to create Galaxy workflow for your CLM-FATES simulations to make your research fully reproducible.
 
 > ### Agenda
 >
@@ -57,12 +57,12 @@ It will also teach you on how to create Galaxy workflow for your site-level CLM-
 
 > ### {% icon comment %} Background
 >
-> FATES is the “Functionally Assembled Terrestrial Ecosystem Simulator”, which is a vegetation demographic model ([Fisher et al. 2018](https://onlinelibrary.wiley.com/doi/full/10.1111/gcb.13910)).
+> FATES is the “Functionally Assembled Terrestrial Ecosystem Simulator”.
 > FATES needs what we call a "Host Land Model" (HLM) to run and in this tutorial
 > we will be using the [Community Land Model](http://www.cesm.ucar.edu/models/clm/)
 > of the [Community Terrestrial Systems Model](https://github.com/ESCOMP/CTSM) (CLM-CTSM).
 > FATES was derived from the CLM Ecosystem Demography model (CLM(ED)), which was documented in
-> {% cite Fisher2015 %} and [Koven et al. 2020](https://bg.copernicus.org/articles/17/3017/2020/). 
+> {% cite Fisher2015 %}.
 > And this technical note was first published as an appendix to [that paper](https://pdfs.semanticscholar.org/396c/b9f172cb681421ed78325a2237bfb428eece.pdf).
 > The [FATES documentation](https://fates-docs.readthedocs.io/en/latest/index.html) will provide some more insight on FATES too.
 >
@@ -76,15 +76,16 @@ Preparing CLM-FATES input data is out of scope for this tutorial. We assume the 
 atm   cpl   lnd   share
 ```
 
-Each sub-folder will then contain all the necessary inputs for running your CLM-FATES case.
-For the purpose of this tutorial, input data for a single point location (ALP1) on the Norwegian alpine tundra ecosystem (Latitude: 61.0243N, Longitude: 8.12343E, Elevation: 1208 m) has been prepared and is ready to use. More details about the sites can be found in [Klanderud et al. (2015)](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0130205) and  [Vigdis et al. (2020)](https://www.pnas.org/content/117/37/22858) 
+Each sub-folder will then contain all the necessary inputs for running your CLM-FATES case. For instance, 'atm' contains all the meteorological forcing data for running CLM-FATES. 'lnd' contains the data required to describe surface conditions (e.g., soil depth) for the model. More details about the model inputdata can be found in [CLM and FATES documentation](https://escomp.github.io/ctsm-docs/versions/master/html/tech_note/Ecosystem/CLM50_Tech_Note_Ecosystem.html#model-input-requirements)
+
+For the purpose of this tutorial, input data for a single point location ALP1 (61.0243N, 8.12343E) has been prepared and is ready to use.
 
 > ### {% icon hands_on %} Hands-on: Data upload
 >
 > 1. Create a new history for this tutorial. If you are not inspired, you can name it *fates*.
 >    {% include snippets/create_new_history.md %}
 > 2. Import the [input data](https://doi.org/10.5281/zenodo.4108341) and the [restart dataset from Zenodo](https://doi.org/10.5281/zenodo.4126404)
->    or from the shared data library
+>    or from the shared data library. Restart dataset will be used if you want to initialize the model from exisiting experiments rather than running the model from a cold start to shorten spin-up time needed for the model.
 >
 >    ```
 >    https://zenodo.org/record/4108341/files/inputdata_version2.0.0_ALP1.tar
@@ -128,7 +129,6 @@ We will be using the CTSM/FATES-EMERALD Galaxy tool.
 > So always check and update accordingly the tool parameters!
 >
 {: .comment}
-
 > ### {% icon hands_on %} Hands-on: Creating a new CTSM/FATES-EMERALD case
 >
 > 1. {% tool [CTSM/FATES-EMERALD](toolshed.g2.bx.psu.edu/repos/climate/ctsm_fates/ctsm_fates/2.0.1) %} with the following parameters:
