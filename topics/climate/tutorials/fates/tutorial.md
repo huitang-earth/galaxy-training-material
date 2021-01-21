@@ -105,7 +105,7 @@ For the purpose of this tutorial, input data for a single point location (ALP1) 
 >      - Example: rename `https://zenodo.org/record/4108341/files/inputdata_version2.0.0_ALP1.tar` to `inputdata_version2.0.0_ALP1.tar`
 >      - Do the same for the other dataset
 >
->    {% include snippets/rename_dataset.md %}https://github.com/NordicESMhub/ctsm/tree/fates_emerald_api
+>    {% include snippets/rename_dataset.md %}
 >
 {: .hands_on}
 
